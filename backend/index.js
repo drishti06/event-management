@@ -10,8 +10,7 @@ import dotenv from "dotenv"
 const server = express();
 server.use(express.json());
 server.use(cors({
-    origin: "https://event-management-inky.vercel.app/",
-    methods: ['GET', 'PUT', 'POST']
+    origin: "https://event-management-inky.vercel.app/"
 }));
 server.use(bodyParser.json());
 dotenv.config();
