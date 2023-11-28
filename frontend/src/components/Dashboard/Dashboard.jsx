@@ -11,10 +11,10 @@ const Dashboard = () => {
 
     const allEvents = async () => {
         try {
-            const response = await axios.post(`http://localhost:8080/events/registered-events/${id}`)
+            const response = await axios.post(`https://event-management-backend-chi.vercel.app/events/registered-events/${id}`)
             setEvents(response.data)
             // console.log(response.data)
-            const event = await axios.post(`http://localhost:8080/events/organizer-events/${id}`)
+            const event = await axios.post(`https://event-management-backend-chi.vercel.app/events/organizer-events/${id}`)
             setEventById(event.data)
         } catch (error) {
             console.log(error)

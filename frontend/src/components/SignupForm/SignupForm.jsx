@@ -13,8 +13,8 @@ const SignupForm = () => {
         e.preventDefault()
         const apiEndpoint =
             userType === 'user'
-                ? 'http://localhost:8080/users/new-user'
-                : 'http://localhost:8080/organizers/new-organizer';
+                ? 'https://event-management-backend-chi.vercel.app/users/new-user'
+                : 'https://event-management-backend-chi.vercel.app/organizers/new-organizer';
 
         const response = await axios.post(apiEndpoint, {
             username,

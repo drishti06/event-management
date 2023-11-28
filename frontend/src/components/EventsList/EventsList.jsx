@@ -6,10 +6,10 @@ const EventsList = () => {
     const [eventList, setEventList] = useState([])
     const id = localStorage.getItem('loggedIn')
     const allEvents = async (req, res) => {
-        const list = await axios.get("http://localhost:8080/events")
+        const list = await axios.get("https://event-management-backend-chi.vercel.app/events")
         setEventList(list.data)
     }
-    //     const organizerName = async () =>{ await axios.post("http://localhost:8080/organizers/")
+    //     const organizerName = async () =>{ await axios.post("https://event-management-backend-chi.vercel.app/organizers/")
     // }
     useEffect(() => {
         allEvents()

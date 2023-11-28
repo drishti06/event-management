@@ -13,7 +13,7 @@ const LoginForm = () => {
     const handleUserLogin = async (e) => {
         e.preventDefault();
         if (userType === 'user') {
-            const response = await axios.post('http://localhost:8080/users/login-user', {
+            const response = await axios.post('https://event-management-backend-chi.vercel.app/users/login-user', {
                 email,
                 password,
             })
@@ -21,7 +21,7 @@ const LoginForm = () => {
             localStorage.setItem("loggedIn", `${response.data._id}`)
         }
         else if (userType === 'organizer') {
-            const res = await axios.post('http://localhost:8080/organizers/login-organizer', {
+            const res = await axios.post('https://event-management-backend-chi.vercel.app/organizers/login-organizer', {
                 email, password
             })
             setOrganizer(res.data.username)

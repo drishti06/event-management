@@ -7,7 +7,7 @@ const UserEvents = () => {
 
     const eventsList = async () => {
         try {
-            const list = await axios.post(`http://localhost:8080/users/your-events/${id}`);
+            const list = await axios.post(`https://event-management-backend-chi.vercel.app/users/your-events/${id}`);
             const eventsData = list.data.map((event) => ({
                 eventName: event.correspondingEvent.name,
                 organizerName: event.correspondingOrganizer.username,

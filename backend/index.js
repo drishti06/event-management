@@ -9,14 +9,16 @@ import dotenv from "dotenv"
 
 const server = express();
 server.use(express.json());
-server.use(cors());
+server.use(cors({
+    origin: "https://infotrixs-backend.vercel.app"
+}));
 server.use(bodyParser.json());
 dotenv.config();
 
 main();
 async function main() {
     mongoose
-        .connect(process.env.MONGODB_URL)
+        .connect("mongodb+srv://DrishtiKurmavanshi:n5RnUNAtPyh9TeDR@cluster0.gkqcmrh.mongodb.net/EventManagement")
         .then(function () {
             console.log("Connected to MongoDB");
         })
