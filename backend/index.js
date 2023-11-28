@@ -10,7 +10,7 @@ import dotenv from "dotenv"
 const server = express();
 server.use(express.json());
 server.use(cors({
-    origin: "https://infotrixs-backend.vercel.app"
+    origin: "https://event-management-inky.vercel.app/"
 }));
 server.use(bodyParser.json());
 dotenv.config();
