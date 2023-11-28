@@ -28,10 +28,15 @@ async function main() {
         });
 }
 
+
 server
     .use("/events", EventRoutes)
     .use("/users", UserRoutes)
     .use("/organizers", OrganizerRoutes)
+
+server.get('/', (req, res) => {
+    res.status(200).json({ "hello"})
+})
 
 server.listen(process.env.PORT, () => {
     console.log(`Server started at port ${process.env.PORT}`);
